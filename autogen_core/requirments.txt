@@ -1,0 +1,4 @@
+autogen-agentchat
+requests
+openai
+python-dotenv
