@@ -51,3 +51,42 @@ HuecoGuard requires your OpenAI API key. Create a file named `.env` in the proje
 OPENAI_API_KEY=sk-YourActualAPIKeyHere
 ```
 
+### Running the Bias Validator
+
+Open a new terminal tab and run the following commands:
+
+```bash
+cd node_validators/bias-validator
+npm install
+echo "OPENAI_API_KEY=your-openai-api-key" > .env
+npm start
+```
+
+### Fact Validator Setup
+
+#### Running the Fact Validator
+
+Open a new terminal tab and run the following commands:
+
+```bash
+cd node_validators/fact-validator
+npm install
+echo "OPENAI_API_KEY=your-openai-api-key" > .env
+npm start
+```
+
+### Hallucination Validator Setup
+
+#### Running the Hallucination Validator
+
+Open a new terminal tab and run the following commands:
+
+```bash
+cd node_validators/hallucination-validator
+npm install
+echo "OPENAI_API_KEY=your-openai-api-key" > .env
+npm start
+```
+
+Simply replace `your-openai-api-key` with your actual key when you're ready to run the validators.
+
