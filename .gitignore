@@ -1,0 +1,17 @@
+# Ignore Python virtual environment
+autogen_core/venv/
+
+# Ignore Microsoft AutoGen clone if it's inside this project
+autogen/
+
+# Ignore node module installs
+node_validators/**/node_modules/
+
+# Ignore environment variable files
+node_validators/**/.env
+
+# Bytecode + cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
