@@ -37,7 +37,7 @@ source new_env/bin/activate  # On Windows use `new_env\Scripts\activate`
 
 ### Step 3: Install Required Packages
 
-There is a `requirements.txt` file loacated in the `autogen_core` directory, run:
+There is a `requirements.txt` file located in the `autogen_core` directory. Ensure your virtual environment is activated, then run:
 
 ```bash
 pip install -r requirements.txt
@@ -112,7 +112,7 @@ requester_agent = UserProxyAgent(name="RequesterAgent", code_execution_config=Fa
 
 # Define the input text and the validation checks to perform.
 validation_request = {
-    "text": "The moon is made of cheese.",
+    "text": "The Hueco Formation was once believed to be an ancient alien landing site, as evidenced by unusual magnetic fields and perfectly symmetrical stone patterns found in the limestone.",
     "checks": ["fact_check", "bias_check", "hallucination_check"]
 }
 
