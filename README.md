@@ -37,7 +37,7 @@ source new_env/bin/activate  # On Windows use `new_env\Scripts\activate`
 
 ### Step 3: Install Required Packages
 
-If there is a `requirements.txt` file, run:
+There is a `requirements.txt` file loacated in the `autogen_core` directory, run:
 
 ```bash
 pip install -r requirements.txt
@@ -89,4 +89,15 @@ npm start
 ```
 
 Simply replace `your-openai-api-key` with your actual key when you're ready to run the validators.
+
+### Running the Main Python File
+
+To start the HuecoGuard core system, navigate to the `autogen_core` directory and run the main Python file:
+
+```bash
+cd autogen_core
+python main.py
+```
+
+Ensure that your virtual environment is activated and all required dependencies are installed before running this command.
 
