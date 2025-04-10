@@ -1,4 +1,4 @@
-autogen-agentchat
+autogen==0.8.5
 requests
 openai
 python-dotenv
