@@ -98,3 +98,27 @@ python main.py
 
 Ensure that your virtual environment is activated and all required dependencies are installed before running this command.
 
+### Using HuecoGuard with AutoGen Agents
+
+Any AutoGen agent can call HuecoGuard by passing the required arguments to the tool. Below is an example of how to invoke HuecoGuard with the expected arguments:
+
+```python
+from huecoguard import guardrail_check
+
+response = guardrail_check(
+    text="The moon is made of cheese.",
+    checks=["fact_check", "bias_check", "hallucination_check"]
+)
+
+print(response)
+```
+
+In this example:
+- `text` is the input content to be validated.
+- `checks` is a list of validation types to perform. Supported checks include:
+  - `fact_check`
+  - `bias_check`
+  - `hallucination_check`
+
+The `guardrail_check` function will return a structured response indicating the results of the specified validations.
+
