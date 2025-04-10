@@ -103,14 +103,35 @@ Ensure that your virtual environment is activated and all required dependencies 
 Any AutoGen agent can call HuecoGuard by passing the required arguments to the tool. Below is an example of how to invoke HuecoGuard with the expected arguments:
 
 ```python
-from huecoguard import guardrail_check
+import asyncio
+import json
+from autogen import UserProxyAgent  # Import the UserProxyAgent class from AutoGen.
 
-response = guardrail_check(
-    text="The moon is made of cheese.",
-    checks=["fact_check", "bias_check", "hallucination_check"]
-)
+# Initialize the requester agent with a unique name.
+requester_agent = UserProxyAgent(name="RequesterAgent", code_execution_config=False)
 
-print(response)
+# Define the input text and the validation checks to perform.
+validation_request = {
+    "text": "The moon is made of cheese.",
+    "checks": ["fact_check", "bias_check", "hallucination_check"]
+}
+
+# Convert the dictionary to a JSON-formatted string.
+tool_call_message = json.dumps(validation_request)
+
+async def call_huecoguard_tool():
+    # Send the validation request to the HuecoGuard agent.
+    response = await requester_agent.initiate_chat(
+        recipient="<HuecoGuardAgent Identifier>",  # Replace with the actual identifier of the HuecoGuard agent.
+        message=tool_call_message
+    )
+    
+    # Process and display the response received from HuecoGuard.
+    print("Response from HuecoGuard:", response)
+
+# Execute the asynchronous function.
+if __name__ == '__main__':
+    asyncio.run(call_huecoguard_tool())
 ```
 
 In this example:
@@ -120,5 +141,5 @@ In this example:
   - `bias_check`
   - `hallucination_check`
 
-The `guardrail_check` function will return a structured response indicating the results of the specified validations.
+The `call_huecoguard_tool` function will send the request to HuecoGuard and return a structured response indicating the results of the specified validations.
 
