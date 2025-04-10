@@ -51,42 +51,39 @@ HuecoGuard requires your OpenAI API key. Create a file named `.env` in the proje
 OPENAI_API_KEY=sk-YourActualAPIKeyHere
 ```
 
-### Running the Bias Validator
+### Running the Validators
 
-Open a new terminal tab and run the following commands:
+Start the validators in the following order:
 
-```bash
-cd node_validators/bias-validator
-npm install
-echo "OPENAI_API_KEY=your-openai-api-key" > .env
-npm start
-```
+1. **Fact Validator**  
+   Open a new terminal tab and run the following commands:
 
-### Fact Validator Setup
+   ```bash
+   cd node_validators/fact-validator
+   npm install
+   echo "OPENAI_API_KEY=your-openai-api-key" > .env
+   npm start
+   ```
 
-#### Running the Fact Validator
+2. **Bias Validator**  
+   Open a new terminal tab and run the following commands:
 
-Open a new terminal tab and run the following commands:
+   ```bash
+   cd node_validators/bias-validator
+   npm install
+   echo "OPENAI_API_KEY=your-openai-api-key" > .env
+   npm start
+   ```
 
-```bash
-cd node_validators/fact-validator
-npm install
-echo "OPENAI_API_KEY=your-openai-api-key" > .env
-npm start
-```
+3. **Hallucination Validator**  
+   Open a new terminal tab and run the following commands:
 
-### Hallucination Validator Setup
-
-#### Running the Hallucination Validator
-
-Open a new terminal tab and run the following commands:
-
-```bash
-cd node_validators/hallucination-validator
-npm install
-echo "OPENAI_API_KEY=your-openai-api-key" > .env
-npm start
-```
+   ```bash
+   cd node_validators/hallucination-validator
+   npm install
+   echo "OPENAI_API_KEY=your-openai-api-key" > .env
+   npm start
+   ```
 
 Simply replace `your-openai-api-key` with your actual key when you're ready to run the validators.
 
